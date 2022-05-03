@@ -37,6 +37,8 @@ dependencies:
   google_fonts: ^2.3.2
   # For rendering svg images
   flutter_svg: ^1.0.3
+  # For mathematical calculation
+  math_expressions: ^2.3.0
 
 dev_dependencies:
   flutter_test:
