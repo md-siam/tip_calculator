@@ -1,22 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class HomePage extends StatelessWidget {
+import 'widget/constant.dart';
+
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  ScrollController? scrollController;
+  double tipAmount = 4.27;
+  double totalAmount = 32.79;
+
   @override
   Widget build(BuildContext context) {
-    ScrollController? scrollController;
-
-    /// default textStyle for `labels`
+    /// `reset` button action
     ///
-    TextStyle labelText = const TextStyle(
-      fontSize: 18,
-      fontWeight: FontWeight.bold,
-      color: Color(0xFF5E7A7D),
-    );
+    void resetButtonAction() {
+      setState(() {
+        tipAmount = 0;
+        totalAmount = 0;
+      });
+    }
 
     return Scaffold(
-      backgroundColor: const Color(0xFFC5E4E7),
+      backgroundColor: backgroundColor,
       body: SafeArea(
         child: Stack(
           children: [
@@ -25,29 +35,11 @@ class HomePage extends StatelessWidget {
               controller: scrollController,
               child: Column(
                 children: [
-                  Container(
-                    height: 140,
-                    width: double.infinity,
-                    color: Colors.transparent,
-                  ),
+                  transparentContainer(140),
                   Container(
                     height: 700,
                     width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(25.0),
-                        topRight: Radius.circular(25.0),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: const Offset(0, 3),
-                        ),
-                      ],
-                    ),
+                    decoration: containerDecoration,
                     child: Padding(
                       padding: const EdgeInsets.all(25.0),
                       child: Column(
@@ -86,71 +78,24 @@ class HomePage extends StatelessWidget {
                               child: Column(
                                 children: [
                                   Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Column(
-                                        children: const [
-                                          Text(
-                                            'Tip Amount',
-                                            style:
-                                                TextStyle(color: Colors.white),
-                                          ),
-                                          Text(
-                                            '/ person',
-                                            style:
-                                                TextStyle(color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      const Expanded(child: SizedBox()),
-                                      const Text(
-                                        '\$4.27',
-                                        style: TextStyle(
-                                          fontSize: 35,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white,
-                                        ),
-                                      ),
+                                      titleDesc('Tip Amount', '/ person'),
+                                      Text('\$$tipAmount', style: outputText),
                                     ],
                                   ),
                                   const SizedBox(height: 30),
                                   Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Column(
-                                        children: const [
-                                          Text(
-                                            'Total',
-                                            style:
-                                                TextStyle(color: Colors.white),
-                                          ),
-                                          Text(
-                                            '/ person',
-                                            style:
-                                                TextStyle(color: Colors.white),
-                                          ),
-                                        ],
-                                      ),
-                                      const Expanded(child: SizedBox()),
-                                      const Text(
-                                        '\$32.79',
-                                        style: TextStyle(
-                                          fontSize: 35,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white,
-                                        ),
-                                      ),
+                                      titleDesc('Total', '/ person'),
+                                      Text('\$$totalAmount', style: outputText),
                                     ],
                                   ),
                                   const SizedBox(height: 30),
-                                  ElevatedButton(
-                                    onPressed: () {},
-                                    child: const Text(
-                                      'RESET',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
+                                  resetButton(resetButtonAction),
                                 ],
                               ),
                             ),
@@ -167,15 +112,30 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-}
 
-Widget background() => Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Expanded(
-          flex: 1,
-          child: Center(child: SvgPicture.asset('assets/images/logo.svg')),
+  ElevatedButton resetButton(void Function() resetButtonAction) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(primary: const Color(0xFF26c0ab)),
+      child: const Padding(
+        padding: EdgeInsets.only(
+          top: 10.0,
+          bottom: 10.0,
+          left: 100.0,
+          right: 100.0,
         ),
-        const Expanded(flex: 4, child: SizedBox())
-      ],
+        child: Text(
+          'RESET',
+          style: TextStyle(
+            fontSize: 20,
+            color: Color(0xFF00494D),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      onPressed: () {
+        print('Reset button pressed');
+        resetButtonAction();
+      },
     );
+  }
+}
