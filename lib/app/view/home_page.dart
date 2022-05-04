@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'widget/constant.dart';
 
@@ -126,13 +127,25 @@ class _HomePageState extends State<HomePage> {
             color: Colors.grey[200],
             borderRadius: BorderRadius.circular(7.0),
           ),
-          child: Text(
-            '$bill ',
-            style: const TextStyle(
-              fontSize: 24,
-              color: Color(0xFF00494D),
-              fontWeight: FontWeight.bold,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: SvgPicture.asset(
+                  'assets/images/icon-dollar.svg',
+                  width: 15,
+                ),
+              ),
+              Text(
+                '$bill ',
+                style: const TextStyle(
+                  fontSize: 24,
+                  color: Color(0xFF00494D),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
         ),
       ],
@@ -152,13 +165,25 @@ class _HomePageState extends State<HomePage> {
             color: Colors.grey[200],
             borderRadius: BorderRadius.circular(7.0),
           ),
-          child: Text(
-            '$numberOfPeople ',
-            style: const TextStyle(
-              fontSize: 24,
-              color: Color(0xFF00494D),
-              fontWeight: FontWeight.bold,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: SvgPicture.asset(
+                  'assets/images/icon-person.svg',
+                  width: 15,
+                ),
+              ),
+              Text(
+                '$numberOfPeople ',
+                style: const TextStyle(
+                  fontSize: 24,
+                  color: Color(0xFF00494D),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
         ),
       ],
