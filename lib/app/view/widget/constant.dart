@@ -66,9 +66,7 @@ Widget titleDesc(String title, String desc) => Column(
         ),
         Text(
           desc,
-          style: const TextStyle(
-            color: Color(0xFF7f9c9f),
-          ),
+          style: const TextStyle(color: Color(0xFF7f9c9f)),
         ),
       ],
     );
