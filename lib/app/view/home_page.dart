@@ -17,9 +17,9 @@ class _HomePageState extends State<HomePage> {
   int _numberOfPeople = 1;
   // This is the default Number Of People
   static const defaultNumberOfPeople = 1;
-  var _billAmountController = TextEditingController();
-  var _tipPercentageController = TextEditingController();
-  var _numberOfPeopleController =
+  final _billAmountController = TextEditingController();
+  final _tipPercentageController = TextEditingController();
+  final _numberOfPeopleController =
       TextEditingController(text: defaultNumberOfPeople.toString());
   // For custom toggle button
   List<String> selectedCategory = [];
