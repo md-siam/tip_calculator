@@ -6,16 +6,19 @@
 # Tip Calculator
 
 <img align="right" src="screenshots/stores_logos/playstore.png" height="190"></img>
-This application is an UI challenge from 
+This application is an UI challenge from
 
 ## Source
 
 UI: https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX
 Font: https://fonts.google.com/?query=space+mono
 
-## Demo
+## Tip Calculator App Demo
+
+<p align="center"><img src="screenshots/gif/demo.gif"></p>
 
 ## File Pattern Inside The `lib` Folder
+
 ```
 lib
 ├── src
