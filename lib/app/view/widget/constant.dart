@@ -13,14 +13,6 @@ TextStyle labelText = const TextStyle(
   color: Color(0xFF5E7A7D),
 );
 
-/// default textStyle for `outputText`
-///
-TextStyle outputText = const TextStyle(
-  fontSize: 36,
-  fontWeight: FontWeight.bold,
-  color: Color(0xFF26C0AB),
-);
-
 Widget background() => Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
