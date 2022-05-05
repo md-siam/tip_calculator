@@ -6,7 +6,7 @@
 # Tip Calculator
 
 <img align="right" src="screenshots/stores_logos/playstore.png" height="190"></img>
-A new Flutter project.
+This application is an UI challenge from 
 
 ## Source
 
@@ -16,3 +16,12 @@ Font: https://fonts.google.com/?query=space+mono
 ## Demo
 
 ## File Pattern Inside The `lib` Folder
+```
+lib
+├── src
+│   ├── widget
+│   │   ├── amount_text.dart
+│   │   └── constant.dart
+│   └── home_page.dart
+└── main.dart
+```

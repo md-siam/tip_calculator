@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
   _getTotalAmount() =>
       (((_bill * _tipPercentage) / 100) + _bill) / _numberOfPeople;
 
-  _resetAction() {
+  _resetButtonAction() {
     setState(() {
       selectedCategory = [];
       _bill = 0;
@@ -289,6 +289,8 @@ class _HomePageState extends State<HomePage> {
         selectedCategory = [];
         selectedCategory.add(category);
         //debugPrint(selectedCategory.toString());
+        /// `Converting` selectedCategory from STRING to INT
+        ///
         int selectedTip = int.parse(selectedCategory[0]);
         //debugPrint(selectedTip.toString());
         setState(() {
@@ -356,15 +358,15 @@ class _HomePageState extends State<HomePage> {
               style: ElevatedButton.styleFrom(primary: const Color(0xFF26c0ab)),
               child: const Padding(
                 padding: EdgeInsets.only(
-                  top: 10.0,
-                  bottom: 10.0,
-                  left: 100.0,
-                  right: 100.0,
+                  top: 8.0,
+                  bottom: 8.0,
+                  left: 92.0,
+                  right: 92.0,
                 ),
                 child: Text(
                   'RESET',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 24,
                     color: Color(0xFF00494D),
                     fontWeight: FontWeight.bold,
                   ),
@@ -372,7 +374,7 @@ class _HomePageState extends State<HomePage> {
               ),
               onPressed: () {
                 //debugPrint('Reset button pressed');
-                _resetAction();
+                _resetButtonAction();
               },
             ),
           ],
