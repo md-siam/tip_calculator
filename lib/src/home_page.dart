@@ -31,8 +31,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    /// This is the `event listeners` to the controllers using
-    /// the [addListener] method
+    /// This is the `event listeners` of the TextEditingControllers
+    /// implemented using the [addListener] method
     ///
     _billAmountController.addListener(_onBillAmountChanged);
     _tipPercentageController.addListener(_onTipAmountChanged);
@@ -158,6 +158,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  /// This is for taking user input of `billing information`
+  ///
   Widget billingInputInfo() {
     return Column(
       children: [
@@ -203,6 +205,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  /// This is for taking user input of `select tip %`
+  ///
   Widget selectTipPercentageInfo(double width) {
     return Container(
       width: width,
@@ -237,6 +241,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  /// This is for taking user input of `number of people`
+  ///
   Widget numberOfPeopleInputInfo() {
     return Column(
       children: [
@@ -321,6 +327,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  /// This is for displaying output `information`
+  ///
   Widget outputCardInfo() {
     return Container(
       height: 260,
