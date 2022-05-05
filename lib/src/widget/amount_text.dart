@@ -11,7 +11,7 @@ class AmountText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      text.toUpperCase(),
+      '\$${text.toUpperCase()}',
       style: const TextStyle(
         fontSize: 36,
         fontWeight: FontWeight.bold,

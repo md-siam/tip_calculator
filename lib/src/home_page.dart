@@ -218,7 +218,7 @@ class _HomePageState extends State<HomePage> {
           color: Color(0xFF00494D),
           fontWeight: FontWeight.bold,
         ),
-        keyboardType: const TextInputType.numberWithOptions(decimal: true),
+        keyboardType: const TextInputType.numberWithOptions(decimal: false),
         textDirection: TextDirection.rtl,
         decoration: const InputDecoration(
           suffixIcon: Icon(Icons.percent, color: Colors.grey),
@@ -329,7 +329,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 titleDesc('Tip Amount', '/ person'),
                 AmountText(
-                  text: '\$${_getTipAmount().toStringAsFixed(2)}',
+                  text: '${_getTipAmount().toStringAsFixed(2)}',
                   key: const Key('tipAmount'),
                 ),
               ],
@@ -340,7 +340,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 titleDesc('Total', '/ person'),
                 AmountText(
-                  text: '\$${_getTotalAmount().toStringAsFixed(2)}',
+                  text: '${_getTotalAmount().toStringAsFixed(2)}',
                   key: const Key('totalAmount'),
                 ),
               ],

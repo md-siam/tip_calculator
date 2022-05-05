@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'app/view/home_page.dart';
+import 'src/home_page.dart';
 
 void main() {
   // For disabling landscape view
