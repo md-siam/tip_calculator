@@ -23,11 +23,11 @@ class _HomePageState extends State<HomePage> {
       TextEditingController(text: defaultNumberOfPeople.toString());
   // For custom toggle button
   List<String> selectedCategory = [];
-  String category1 = '5%';
-  String category2 = '10%';
-  String category3 = '15%';
-  String category4 = '25%';
-  String category5 = '50%';
+  String category1 = '5';
+  String category2 = '10';
+  String category3 = '15';
+  String category4 = '25';
+  String category5 = '50';
 
   @override
   void initState() {
@@ -213,6 +213,7 @@ class _HomePageState extends State<HomePage> {
       ),
       child: TextFormField(
         controller: _tipPercentageController,
+        onTap: () => selectedCategory = [],
         style: const TextStyle(
           fontSize: 24,
           color: Color(0xFF00494D),
@@ -284,10 +285,15 @@ class _HomePageState extends State<HomePage> {
   GestureDetector toggleButton(String category, double width) {
     return GestureDetector(
       onTap: () {
+        _tipPercentageController.clear();
         selectedCategory = [];
         selectedCategory.add(category);
-        debugPrint(selectedCategory.toString());
-        setState(() {});
+        //debugPrint(selectedCategory.toString());
+        int selectedTip = int.parse(selectedCategory[0]);
+        //debugPrint(selectedTip.toString());
+        setState(() {
+          _tipPercentage = selectedTip;
+        });
       },
       child: Container(
         width: width,
@@ -300,7 +306,7 @@ class _HomePageState extends State<HomePage> {
           borderRadius: BorderRadius.circular(7.0),
         ),
         child: Text(
-          category,
+          '$category%',
           style: TextStyle(
             fontSize: 24,
             color: selectedCategory.contains(category)
