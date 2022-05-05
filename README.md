@@ -6,12 +6,15 @@
 # Tip Calculator
 
 <img align="right" src="screenshots/stores_logos/playstore.png" height="190"></img>
-This application is an UI challenge from <a href = "https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX">frontend mentor</a>.
+This application is an UI challenge from <a href = "https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX">frontend mentor</a>. It is a 'Tip Calculator'. It's an open-source project, hence use of the source code is governed by an MIT-style license that can be found in the LICENSE file or at https://choosealicense.com/licenses/mit/
 
-## Source
+## Packages Used
 
-UI: https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX
-Font: https://fonts.google.com/?query=space+mono
+This application is using one third-party package from the open-source community. Thanks to the developers of <a href = "https://pub.dev/packages/flutter_svg">flutter_svg: ^1.0.3 </a> for this amazing packages. The purpose of using this package is to enable the support of SVG files in the flutter application. It's a Dart-native rendering library.
+
+```
+  flutter_svg: ^1.0.3   //For rendering svg images
+```
 
 ## Tip Calculator App Demo
 
