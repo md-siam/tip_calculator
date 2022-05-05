@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  ScrollController? scrollController;
+  final ScrollController scrollController = ScrollController();
   double _bill = 0;
   int _tipPercentage = 0;
   int _numberOfPeople = 1;

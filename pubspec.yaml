@@ -33,8 +33,6 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  # For fonts
-  google_fonts: ^2.3.2
   # For rendering svg images
   flutter_svg: ^1.0.3
 
@@ -74,3 +72,11 @@ flutter:
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: SpaceMono
+      fonts:
+        - asset: assets/fonts/Space_Mono/SpaceMono-Bold.ttf
+        - asset: assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf
+        - asset: assets/fonts/Space_Mono/SpaceMono-Italic.ttf
+        - asset: assets/fonts/Space_Mono/SpaceMono-Regular.ttf

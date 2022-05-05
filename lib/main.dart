@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'app/view/home_page.dart';
 
@@ -23,10 +22,8 @@ class MyApp extends StatelessWidget {
       title: 'Tip Calculator',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'SpaceMono',
         primarySwatch: Colors.teal,
-        textTheme: GoogleFonts.spaceMonoTextTheme(
-          Theme.of(context).textTheme,
-        ),
       ),
       home: const HomePage(),
     );
