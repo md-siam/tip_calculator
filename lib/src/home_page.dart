@@ -11,10 +11,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final ScrollController scrollController = ScrollController();
   double _bill = 0;
   int _tipPercentage = 0;
   int _numberOfPeople = 1;
+  final ScrollController _scrollController = ScrollController();
   // This is the default Number Of People
   static const defaultNumberOfPeople = 1;
   final _billAmountController = TextEditingController();
@@ -84,9 +84,13 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     _billAmountController.dispose();
     _tipPercentageController.dispose();
     _numberOfPeopleController.dispose();
+    _billAmountController.removeListener(_onBillAmountChanged);
+    _tipPercentageController.removeListener(_onTipAmountChanged);
+    _numberOfPeopleController.removeListener(_numberOfPeopleChanged);
     super.dispose();
   }
 
@@ -107,7 +111,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             background(),
             SingleChildScrollView(
-              controller: scrollController,
+              controller: _scrollController,
               child: Column(
                 children: [
                   transparentContainer(140),
