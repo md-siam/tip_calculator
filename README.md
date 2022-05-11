@@ -24,7 +24,7 @@ This application is using one third-party package from the open-source community
 
 ```
 lib
-├── src
+├── app
 │   ├── widget
 │   │   ├── amount_text.dart
 │   │   └── constant.dart
