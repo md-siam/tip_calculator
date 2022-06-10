@@ -24,9 +24,9 @@ This application is using one third-party package from the open-source community
 ## File Pattern Inside The `lib` Folder
 
 ```
-lib
-├── app
-│   ├── widget
+lib/
+├── app/
+│   ├── widget/
 │   │   ├── amount_text.dart
 │   │   └── constant.dart
 │   └── home_page.dart
